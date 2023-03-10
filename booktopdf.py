@@ -93,11 +93,13 @@ def pdf(title, max_page):
         im_buf = Image.open(img_path)
         cvt_rgb = im_buf.convert('RGB')
         img_list.append(cvt_rgb)
-        if remove:
-            os.remove('/abc/test.text')
 
     del img_list[0]
     cvt_rgb_0.save(path_dir + title + '.pdf', save_all=True, append_images=img_list)
+    
+    if remove:
+        for i in range(1, max_page + 1):
+            os.remove('/abc/test.text')
 
 
 def main():
