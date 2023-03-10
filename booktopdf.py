@@ -99,7 +99,7 @@ def pdf(title, max_page):
     
     if remove:
         for i in range(1, max_page + 1):
-            os.remove(f'{title}/test.text')
+            os.remove(f'{title}/capture{i}.png')
 
 
 def main():
